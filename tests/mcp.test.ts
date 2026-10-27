@@ -74,7 +74,7 @@ describe('documentation helpers', () => {
   test('lists and reads whitelisted docs, rejects traversal', () => {
     const docs = listDocs();
     expect(docs.some((doc) => doc.path === 'docs/cli-reference.md')).toBe(true);
-    expect(readDoc('docs/cli-reference.md')).toContain('CLI Reference');
+    expect(readDoc('docs/cli-reference.md')).toContain('CLI reference');
     expect(() => readDoc('../../etc/passwd')).toThrow();
     expect(() => readDoc('package.json')).toThrow(/Unknown document/);
   });
