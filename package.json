@@ -1,25 +1,33 @@
 {
   "name": "@framework/ai-mcp",
   "version": "0.2.0",
-  "description": "MCP server bridging the framework CLI and documentation for AI coding agents.",
   "private": true,
-  "license": "MIT",
-  "type": "module",
+  "description": "MCP server bridging the framework CLI and documentation for AI coding agents.",
   "homepage": "https://github.com/mohamedhabibwork/framework-ai-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/mohamedhabibwork/framework/issues"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mohamedhabibwork/framework.git",
     "directory": "packages/ai-mcp"
   },
-  "bugs": {
-    "url": "https://github.com/mohamedhabibwork/framework/issues"
-  },
   "bin": {
     "framework-mcp": "./src/index.ts"
   },
+  "type": "module",
   "exports": {
     ".": "./src/index.ts",
     "./server": "./src/server.ts"
+  },
+  "scripts": {
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
   },
   "dependencies": {
     "@framework/cli": "workspace:*",

@@ -181,7 +181,8 @@ describe('mcp server', () => {
       expect(resources.some((resource) => resource.uri === 'fwdocs://docs/testing.md')).toBe(true);
 
       const reading = await client.readResource({ uri: 'fwdocs://docs/testing.md' });
-      expect(reading.contents[0]?.text).toContain('Test');
+      const firstContent = reading.contents[0];
+      expect(firstContent && 'text' in firstContent ? firstContent.text : '').toContain('Test');
 
       const tool = (await client.callTool({
         name: 'docs_read',
